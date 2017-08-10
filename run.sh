@@ -1,2 +1,2 @@
 #!/bin/bash
-service bt start
+service bt start && cat
