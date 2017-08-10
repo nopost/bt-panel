@@ -1,7 +1,6 @@
 FROM centos:6
 MAINTAINER re20y <master@mkaliez.com>
-RUN yum -y install initscripts; yum clean all
-    && yum -y check-update
+RUN yum -y check-update
     && yum -y update
     && yum -y install initscripts screen wget; yum clean all
     && wget -O install.sh http://download.bt.cn/install/install.sh
