@@ -1,6 +1,6 @@
 FROM centos:6
 MAINTAINER re20y <master@mkaliez.com>
-ADD run.sh run.sh
+ADD ./run.sh /run.sh
 RUN ls
 RUN yum -y install initscripts; yum clean all
 RUN yum install -y wget; yum clean all && wget -O install.sh http://download.bt.cn/install/install.sh && printf "y\n0"|bash ./install.sh
