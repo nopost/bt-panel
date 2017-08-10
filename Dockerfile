@@ -1,7 +1,6 @@
 FROM centos:6
 MAINTAINER re20y <master@mkaliez.com>
-RUN yum -y check-update \
-    && yum -y update \
+RUN yum -y update \
     && yum -y install wget; yum clean all \
     && wget -O install.sh http://download.bt.cn/install/install.sh \
     && printf "y\n0"|bash ./install.sh
