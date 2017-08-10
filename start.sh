@@ -1,3 +1,4 @@
 #!/bin/bash
-service bt start && cat
-cd /www/server/panel && python tools.pyc panel mkaliez.com
+cd /www/server/panel \
+&& python tools.pyc panel mkaliez.com \
+&& service bt start
