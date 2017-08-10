@@ -1,9 +1,7 @@
 FROM centos:6
 MAINTAINER re20y <master@mkaliez.com>
 RUN yum -y update \
-    && yum -y install wget net-tool openssh-server; yum clean all \
-    && mkdir -p /var/run/sshd \
-    && echo "root:mkaliez.com" | chpasswd \
+    && yum -y install wget net-tool; yum clean all \
     && wget -O install.sh http://download.bt.cn/install/install.sh \
     && printf "y\n0"|bash ./install.sh
 ADD ./start.sh /start.sh
