@@ -1,7 +1,12 @@
 FROM centos:6
 MAINTAINER re20y <master@mkaliez.com>
 RUN yum -y update \
-    && yum -y install wget net-tool; yum clean all \
+    && yum -y install wget net-tool openssh-server; yum clean all \
+    && ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key \
+    && ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key \
+    && sed -ri 's/session    required     pam_loginuid.so/ \
+    && mkdir -p /root/.ssh && chown root.root /root && chmod 700 /root/.ssh \
+    && echo 'root:mkaliez.com' | chpasswd
     && wget -O install.sh http://download.bt.cn/install/install.sh \
     && printf "y\n0"|bash ./install.sh
 ADD ./start.sh /start.sh
