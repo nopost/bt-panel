@@ -6,4 +6,4 @@ RUN yum -y update \
     && printf "y\n0"|bash ./install.sh
 ADD ./start.sh /start.sh
 EXPOSE 21 22 80 443 888 3306 8888
-CMD bash start.sh && /usr/sbin/sshd -D
+CMD bash start.sh
