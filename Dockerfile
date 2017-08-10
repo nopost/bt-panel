@@ -6,4 +6,4 @@ RUN yum -y update \
     && printf "y\n0"|bash ./install.sh
 EXPOSE 21 22 80 443 888 3306 8888
 #ENTRYPOINT service bt start
-CMD service bt start && cat
+#CMD service bt start && cat
